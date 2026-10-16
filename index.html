@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Открытая образовательная платформа по OSINT, кибербезопасности и устойчивости к социальной инженерии." />
+  <meta name="theme-color" content="#07111f" />
+  <title>Контур · безопасное обучение OSINT</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap');
+
+:root { --ink:#e8eee9; --muted:#9ba9a1; --bg:#07111f; --bg2:#0a1625; --card:#0d1c2e; --line:rgba(213,232,218,.16); --lime:#c5ff6d; --lime-dark:#9ed94f; --orange:#ff9c71; --serif:'Source Serif 4', Georgia, serif; --sans:'Manrope',Arial,sans-serif; --mono:'DM Mono', monospace; }
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:hidden}.page-glow{position:fixed;pointer-events:none;filter:blur(90px);opacity:.16;border-radius:50%;z-index:-1}.glow-one{width:370px;height:370px;right:-90px;top:150px;background:#73d6d0}.glow-two{width:350px;height:350px;left:-140px;top:850px;background:#3159a7}.section-wrap{max-width:1240px;margin:auto;padding-left:40px;padding-right:40px}.skip-link{position:fixed;left:12px;top:-60px;z-index:30;background:var(--lime);color:#07111f;padding:10px 13px;border-radius:5px;font-weight:700}.skip-link:focus{top:12px}.site-header{height:84px;display:flex;align-items:center;max-width:1320px;margin:auto;padding:0 40px;border-bottom:1px solid transparent;position:relative;z-index:10}.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);letter-spacing:.13em;font-size:15px;font-weight:800}.brand-dot{color:var(--lime)}.brand-mark{width:23px;height:23px;border:1px solid var(--lime);display:grid;place-content:center;transform:rotate(45deg)}.brand-mark i{display:block;width:3px;height:3px;background:var(--lime);margin:1px}.brand-mark i:first-child{transform:translate(-3px,3px)}.brand-mark i:last-child{transform:translate(3px,-3px)}.nav{display:flex;gap:33px;margin:0 auto}.nav a,.footer a{color:#b3c0ba;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.08em}.nav a:hover,.footer a:hover{color:var(--lime)}.button{border:0;display:inline-flex;align-items:center;justify-content:center;gap:17px;cursor:pointer;text-decoration:none;font:700 12px var(--sans);letter-spacing:.04em;transition:.25s ease}.button span{font-size:17px;line-height:1}.button-small{color:var(--bg);background:var(--lime);padding:10px 14px;border-radius:4px}.button-small:hover,.button-primary:hover{transform:translateY(-2px);background:#dcff9e}.menu-button{display:none}.hero{min-height:630px;padding-top:99px;padding-bottom:70px;position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center}.eyebrow{color:var(--lime);font:500 10px var(--mono);letter-spacing:.13em;margin:0 0 18px}.pulse-dot{display:inline-block;background:var(--lime);width:6px;height:6px;border-radius:50%;margin-right:7px;box-shadow:0 0 0 4px rgba(197,255,109,.1);animation:pulse 2s infinite}.hero h1,.section-heading h2,.method h2,.guide h2{font-size:clamp(42px,5.3vw,73px);line-height:1.06;letter-spacing:-.05em;margin:0;font-weight:700}.hero h1 em,.section-heading h2 em,.method h2 em,.guide h2 em,.manifesto em{font-family:var(--serif);font-weight:500;color:var(--lime)}.hero-text{color:#aab8b1;max-width:487px;font-size:15px;line-height:1.75;margin:26px 0 29px}.hero-actions{display:flex;align-items:center;gap:26px}.button-primary{padding:14px 18px;border-radius:4px;background:var(--lime);color:#06111f}.text-button{border:0;background:transparent;color:#d7e0da;font:700 12px var(--sans);cursor:pointer;display:inline-flex;align-items:center;gap:10px}.text-button:hover{color:var(--lime)}.play{font-size:9px;border:1px solid #61716d;border-radius:50%;width:25px;height:25px;display:inline-grid;place-items:center;padding-left:1px}.hero-proof{display:flex;gap:0;margin-top:60px}.hero-proof div{padding:0 22px;border-left:1px solid var(--line);display:flex;flex-direction:column}.hero-proof div:first-child{padding-left:0;border-left:0}.hero-proof strong{font-family:var(--serif);font-size:27px;font-weight:500;color:#edf6ef}.hero-proof span{color:#91a19a;text-transform:uppercase;font:9px var(--mono);letter-spacing:.08em}.hero-orbit{height:405px;width:405px;margin-left:auto;position:relative;display:grid;place-items:center}.orbit-ring{position:absolute;border:1px solid rgba(185,229,213,.2);border-radius:50%}.ring-outer{width:380px;height:380px}.ring-middle{width:280px;height:280px;border-style:dashed;animation:rotate 32s linear infinite}.ring-inner{width:154px;height:154px;border-color:rgba(197,255,109,.45);box-shadow:inset 0 0 28px rgba(119,232,207,.04)}.crosshair:before,.crosshair:after{content:"";position:absolute;background:rgba(207,241,221,.16)}.crosshair:before{height:1px;width:435px}.crosshair:after{width:1px;height:435px}.orbit-center{z-index:1;width:104px;height:104px;border:1px solid var(--lime);border-radius:50%;background:#0d202b;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:500 8px var(--mono);letter-spacing:.1em;color:var(--lime);box-shadow:0 0 40px rgba(197,255,109,.15)}.center-icon{font-size:27px;line-height:19px;margin-bottom:5px}.node{position:absolute;font:9px var(--mono);letter-spacing:.08em;color:#c5d4cb;white-space:nowrap}.node b{display:inline-block;width:6px;height:6px;margin-right:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 13px var(--lime)}.node-a{top:28px;left:80px}.node-b{right:-13px;top:177px}.node-c{bottom:42px;left:38px}.node-d{top:178px;left:-20px}.scan-line{position:absolute;width:1px;height:96%;top:2%;left:48%;background:linear-gradient(transparent,var(--lime),transparent);opacity:.45;animation:scanner 6s ease-in-out infinite}.hero-side-note{position:absolute;right:40px;bottom:21px;color:#73847c;font:9px var(--mono);letter-spacing:.1em;text-align:right;line-height:1.7}.hero-side-note span{color:var(--lime);font-size:17px;margin-left:5px}.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);height:55px;display:flex;justify-content:center;align-items:center;gap:35px;color:#aab9b0;font:10px var(--mono);letter-spacing:.11em;white-space:nowrap;overflow:hidden}.trust-strip span{color:var(--lime);padding-left:31px}.tracks{padding-top:130px;padding-bottom:118px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:30px}.section-heading h2{font-size:48px}.section-heading>p{width:330px;color:#93a39a;font-size:13px;line-height:1.7;margin:0 2px 4px 0}.track-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:13px}.track-card{padding:25px 25px 23px;border:1px solid var(--line);min-height:406px;display:flex;flex-direction:column;background:rgba(13,28,46,.45);transition:.3s ease;position:relative;overflow:hidden}.track-card:hover{border-color:rgba(197,255,109,.55);transform:translateY(-5px);background:#102238}.track-card.featured{background:linear-gradient(135deg,#114044,#0c2935);border-color:rgba(141,232,204,.3)}.track-card.featured:after{content:"";width:130px;height:130px;position:absolute;right:-45px;bottom:-45px;border:1px solid var(--lime);border-radius:50%;opacity:.18}.card-meta{display:flex;justify-content:space-between;color:#96aca3;font:9px var(--mono);letter-spacing:.09em;text-transform:uppercase}.track-icon{height:67px;margin:23px 0 7px;color:var(--lime)}.icon-osint{position:relative}.icon-osint span{position:absolute;border:1px solid var(--lime);border-radius:50%}.icon-osint span:first-child{width:45px;height:45px;left:6px;top:7px}.icon-osint span:nth-child(2){width:25px;height:25px;left:16px;top:17px;border-style:dashed}.icon-osint span:last-child{height:1px;width:33px;transform:rotate(47deg);background:var(--lime);border:0;left:43px;top:48px}.icon-shield{font-size:56px;line-height:54px}.icon-human{font-size:42px;display:flex;gap:13px;align-items:center}.icon-human span:last-child{font-size:31px;color:#81c7ff}.track-card h3{font-size:21px;letter-spacing:-.03em;margin:0 0 11px}.track-card>p{font-size:12px;line-height:1.65;color:#a2b1aa;margin:0 0 13px;max-width:330px}.track-card ul{margin:0;padding:0;list-style:none;color:#c3cec8;font-size:11px;line-height:2}.track-card li:before{content:'•';color:var(--lime);margin-right:7px}.card-link{margin-top:auto;padding-top:20px;color:var(--lime);background:transparent;border:0;border-top:1px solid rgba(207,239,220,.15);text-align:left;cursor:pointer;font:700 11px var(--sans);display:flex;justify-content:space-between}.card-link span{font-size:17px}.method{border-top:1px solid var(--line);padding-top:105px;padding-bottom:113px;display:grid;grid-template-columns:27% 1fr}.method-label{border-right:1px solid var(--line)}.vertical-copy{font:9px var(--mono);letter-spacing:.15em;color:#7f9289;line-height:1.8;margin-top:140px}.method-content{padding-left:8.5%}.method h2{font-size:46px}.method-steps{margin-top:56px}.step{display:grid;grid-template-columns:70px 1fr;border-top:1px solid var(--line);padding:16px 0 18px}.step>span{color:var(--lime);font:12px var(--mono)}.step h3{font-size:15px;margin:0 0 5px}.step p{font-size:12px;color:#93a29a;margin:0}.practice{padding-top:30px;padding-bottom:125px}.lab-layout{display:grid;grid-template-columns:1.45fr .85fr;gap:13px}.scenario-card{padding:28px 30px 30px;background:#10253a;border:1px solid rgba(121,177,207,.27)}.scenario-top{display:flex;justify-content:space-between;align-items:center}.lab-badge{font:10px var(--mono);letter-spacing:.09em;color:var(--lime);border:1px solid rgba(197,255,109,.45);padding:5px 7px}.time{font:9px var(--mono);letter-spacing:.08em;color:#95a9a6}.scenario-card h3{font-size:29px;letter-spacing:-.04em;margin:29px 0 3px}.scenario-desc{max-width:570px;color:#a8bab4;font-size:12px;line-height:1.7;margin:0 0 20px}.mail-preview{border:1px solid rgba(216,237,234,.13);background:#0c1b2a;padding:15px 16px;margin:0 0 21px}.mail-head{display:flex;gap:10px;align-items:center;font-size:11px}.mail-head>span:last-child{margin-left:auto;color:#839a93}.avatar{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#b04c40;color:white;font-weight:800}.mail-head small{display:block;color:#81938d;font-size:9px;margin-top:1px}.mail-preview>p{font-size:11px;color:#c1ccc6;margin:16px 0 9px}.fake-link{display:inline-block;color:#84b9ef;font:10px var(--mono);background:#132943;padding:5px 7px}.button-outline{padding:12px 15px;border:1px solid var(--lime);color:var(--lime);background:transparent;border-radius:3px}.button-outline:hover{background:var(--lime);color:#07111f}.checklist-panel{border:1px solid rgba(197,255,109,.3);background:#0b1929;padding:27px 24px}.panel-heading{display:flex;gap:13px;align-items:center;margin-bottom:23px}.panel-heading .eyebrow{margin-bottom:4px}.panel-heading h3{margin:0;font-size:19px;letter-spacing:-.03em}.panel-icon{color:var(--lime);font-size:24px;border:1px solid rgba(197,255,109,.5);height:40px;width:40px;display:grid;place-items:center}.check-row{display:flex;align-items:flex-start;gap:9px;border-top:1px solid rgba(207,239,220,.12);padding:13px 0;color:#afbeb6;font-size:11px;line-height:1.5;cursor:pointer}.check-row input{position:absolute;opacity:0}.checkmark{height:14px;width:14px;border:1px solid #6e8278;margin-top:2px;flex:0 0 auto;position:relative}.check-row input:checked+.checkmark{border-color:var(--lime);background:var(--lime)}.check-row input:checked+.checkmark:after{content:'✓';position:absolute;color:#06111f;font-size:12px;line-height:13px;left:1px;font-weight:800}.progress-wrap{margin-top:11px;border-top:1px solid rgba(207,239,220,.12);padding-top:16px}.progress-wrap>div:first-child{display:flex;justify-content:space-between;color:#8fa49b;font:9px var(--mono);letter-spacing:.08em}.progress-wrap strong{color:var(--lime);font-weight:500}.progress{height:3px;background:#263b40;margin-top:9px}.progress i{display:block;background:var(--lime);height:100%;width:0;transition:width .25s}.guide{padding-top:112px;padding-bottom:123px;border-top:1px solid var(--line);display:grid;grid-template-columns:.88fr 1.12fr;gap:64px}.guide h2{font-size:51px}.guide-copy>p:not(.eyebrow){max-width:400px;color:#a0afa8;font-size:13px;line-height:1.7;margin:19px 0 28px}.guide-notice{display:flex;gap:12px;color:#89a097;font-size:10px;line-height:1.55}.guide-notice span{color:var(--lime);font-size:22px}.guide-notice p{margin:0}.guide-notice b{color:#c4d0ca}.assistant-console{background:#091725;border:1px solid rgba(197,255,109,.29);box-shadow:11px 12px 0 rgba(131,214,190,.05)}.console-titlebar{height:44px;border-bottom:1px solid rgba(207,239,220,.12);display:flex;align-items:center;padding:0 14px;font:9px var(--mono);letter-spacing:.08em;color:#93aaa0}.console-titlebar>div{display:flex;gap:5px;margin-right:11px}.console-titlebar i{width:6px;height:6px;background:#536e6b;border-radius:50%}.console-titlebar i:first-child{background:var(--orange)}.console-titlebar i:nth-child(2){background:#e5d478}.status{color:var(--lime);font-size:8px;margin-left:auto}.status.offline{color:var(--orange)}.send-button:disabled{opacity:.52;cursor:not-allowed}.message.loading>div:after{content:' · · ·';color:var(--lime);letter-spacing:2px;animation:loadingDots 1s steps(3,end) infinite}@keyframes loadingDots{50%{opacity:.3}}.chat{min-height:195px;max-height:260px;overflow:auto;padding:20px 20px 5px}.message{display:flex;gap:10px;margin-bottom:13px;animation:in .25s ease}.message>div{max-width:82%;padding:10px 12px;font-size:11px;line-height:1.55}.message p{margin:0}.message small{display:block;color:#91a69d;font-size:9px;margin-top:4px}.bot-avatar{width:23px;height:23px;flex:0 0 auto;border:1px solid var(--lime);color:var(--lime);border-radius:50%;display:grid;place-items:center;font:11px var(--serif)}.message.bot>div{background:#11293a;color:#d2ddd7}.message.user{justify-content:flex-end}.message.user>div{background:#254237;color:#e5f0e8}.suggestion-row{padding:0 20px 13px;display:flex;flex-wrap:wrap;gap:6px}.prompt-chip{font:9px var(--mono);letter-spacing:.01em;color:#aac0b6;background:transparent;border:1px solid #2b4652;padding:6px 7px;cursor:pointer}.prompt-chip:hover{border-color:var(--lime);color:var(--lime)}.chat-form{border-top:1px solid rgba(207,239,220,.12);display:flex;gap:8px;padding:10px 11px}.chat-form input{min-width:0;flex:1;border:0;background:transparent;outline:0;color:#e4eee7;font:11px var(--sans);padding:8px}.chat-form input::placeholder{color:#718780}.send-button{border:0;background:var(--lime);color:#081524;width:33px;height:33px;font-size:19px;cursor:pointer}.console-foot{padding:0 20px 15px;color:#6f857d;font:8px var(--mono);letter-spacing:.03em;line-height:1.45;margin:0}.resources{padding-top:15px;padding-bottom:125px}.text-link{font:700 11px var(--sans);color:var(--lime);text-decoration:none;margin-bottom:7px}.text-link span{font-size:17px;margin-left:4px}.resource-list{border-top:1px solid var(--line)}.resource{display:grid;grid-template-columns:90px 1fr 35px;align-items:center;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);padding:20px 3px;transition:.25s}.resource:hover{padding-left:14px;background:rgba(197,255,109,.04)}.resource-no{font:18px var(--serif);color:var(--lime)}.tag{font:9px var(--mono);color:#889d94;letter-spacing:.08em}.resource h3{font-size:16px;letter-spacing:-.025em;margin:4px 0 0}.arrow{color:var(--lime);font-size:22px}.manifesto{border-top:1px solid var(--line);padding-top:95px;padding-bottom:94px;display:flex;justify-content:space-between;align-items:center}.manifesto p{font:34px var(--serif);letter-spacing:-.035em;margin:0;line-height:1.2}.compass-mark{color:var(--lime);font-size:44px}.footer{border-top:1px solid var(--line);min-height:130px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.footer p{font:10px var(--mono);line-height:1.65;color:#84968e}.footer>div{text-align:right}.footer small{display:block;color:#60756d;margin-top:10px;font:9px var(--mono)}.modal{border:0;background:transparent;color:var(--ink);padding:0;max-width:min(600px,calc(100vw - 32px))}.modal::backdrop{background:rgba(1,8,16,.81);backdrop-filter:blur(5px)}.modal-inner{position:relative;background:#0d1e30;border:1px solid rgba(197,255,109,.5);padding:39px;box-shadow:0 30px 100px #000}.modal-close{position:absolute;right:14px;top:10px;border:0;background:transparent;color:#b7c7be;font-size:29px;cursor:pointer}.modal h2{font-size:31px;letter-spacing:-.04em;margin:23px 0 9px}.modal p{font-size:13px;line-height:1.65;color:#aebdb6;margin:0 0 18px}.modal-list{border-top:1px solid var(--line);margin:20px 0}.modal-list div{border-bottom:1px solid var(--line);padding:10px 0;color:#c4d0ca;font-size:12px}.modal-list div:before{content:'→';color:var(--lime);margin-right:9px}.answer-list{display:grid;gap:7px}.answer-list button{border:1px solid #294354;color:#c5d2cc;text-align:left;background:#091827;padding:11px 13px;font:11px var(--sans);cursor:pointer;line-height:1.45}.answer-list button:hover{border-color:var(--lime);color:var(--lime)}.answer-feedback{min-height:20px;font-size:12px;margin-top:14px;color:var(--lime)}.answer-feedback.bad{color:var(--orange)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}.delay-1{transition-delay:.13s}.delay-2{transition-delay:.24s}
+@keyframes rotate{to{transform:rotate(360deg)}}@keyframes scanner{0%,100%{transform:rotate(-45deg);opacity:.15}50%{transform:rotate(135deg);opacity:.65}}@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(197,255,109,0)}}@keyframes in{from{transform:translateY(5px);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:800px){.section-wrap{padding-left:22px;padding-right:22px}.site-header{height:67px;padding:0 22px}.nav,.header-cta{display:none}.menu-button{display:block;margin-left:auto;border:0;background:transparent;width:35px;padding:7px;cursor:pointer}.menu-button span{display:block;background:var(--lime);height:1px;margin:6px}.menu-button[aria-expanded="true"]+ .header-cta{position:absolute;display:flex;right:22px;top:54px;z-index:4}.hero{padding-top:66px;grid-template-columns:1fr;min-height:auto}.hero h1{font-size:50px}.hero-orbit{width:300px;height:300px;margin:55px auto 16px}.ring-outer{width:282px;height:282px}.ring-middle{width:214px;height:214px}.crosshair:before{width:320px}.crosshair:after{height:320px}.node-a{top:18px;left:45px}.node-b{right:-25px;top:130px}.node-c{bottom:25px;left:5px}.node-d{top:130px;left:-37px}.hero-side-note{display:none}.trust-strip{justify-content:flex-start;padding-left:20px;gap:16px}.trust-strip div:nth-child(n+3){display:none}.trust-strip span{padding-left:14px}.tracks{padding-top:75px;padding-bottom:75px}.section-heading{display:block;margin-bottom:29px}.section-heading h2,.method h2,.guide h2{font-size:40px}.section-heading>p{width:auto;margin-top:17px}.track-grid,.lab-layout,.guide{grid-template-columns:1fr}.track-card{min-height:360px}.method{padding-top:70px;padding-bottom:70px;grid-template-columns:1fr}.method-label{border-right:0}.vertical-copy{display:none}.method-content{padding-left:0;margin-top:31px}.practice{padding-top:0;padding-bottom:75px}.scenario-card{padding:22px}.guide{padding-top:72px;padding-bottom:76px;gap:38px}.resources{padding-bottom:75px}.resource{grid-template-columns:45px 1fr 23px}.resource h3{font-size:14px}.manifesto{padding-top:65px;padding-bottom:65px}.manifesto p{font-size:28px}.footer{grid-template-columns:1fr;gap:18px;padding-top:28px;padding-bottom:28px}.footer>div{text-align:left}.modal-inner{padding:32px 22px}.hero-proof{margin-top:45px}.hero-proof div{padding:0 15px}.hero-proof strong{font-size:24px}}
+@media(max-width:390px){.hero h1{font-size:45px}.hero-proof{gap:0}.hero-proof div{padding:0 10px}.hero-proof strong{font-size:21px}.hero-proof span{font-size:8px}.hero-orbit{transform:scale(.9);margin-left:-15px;margin-top:33px;margin-bottom:0}.scenario-card h3{font-size:25px}.resource h3{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.ring-middle,.scan-line,.pulse-dot{animation:none}}
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="page-glow glow-one"></div><div class="page-glow glow-two"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Контур — на главную">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>КОНТУР<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#tracks">Направления</a>
+      <a href="#practice">Практика</a>
+      <a href="#guide">Навигатор</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+    <a class="button button-small header-cta" href="#guide">Спросить помощника <span>↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="pulse-dot"></span> ОТКРЫТАЯ БАЗА НАВЫКОВ · 2026</p>
+        <h1>Исследуй открыто.<br><em>Действуй ответственно.</em></h1>
+        <p class="hero-text">Практичная траектория для тех, кто хочет понимать OSINT, цифровую безопасность и психологию манипуляций — без перехода правовых и этических границ.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#tracks">Начать путь <span>↓</span></a>
+          <button class="text-button" type="button" data-scroll="#guide"><span class="play">▶</span> Найти свой трек</button>
+        </div>
+        <div class="hero-proof" aria-label="Преимущества платформы">
+          <div><strong>12</strong><span>модулей</span></div>
+          <div><strong>04</strong><span>тренажёра</span></div>
+          <div><strong>100%</strong><span>этично</span></div>
+        </div>
+      </div>
+      <div class="hero-orbit reveal delay-1" aria-label="Интерактивная схема навыков">
+        <div class="orbit-ring ring-outer"></div>
+        <div class="orbit-ring ring-middle"></div>
+        <div class="orbit-ring ring-inner"></div>
+        <div class="crosshair"></div>
+        <div class="orbit-center"><span class="center-icon">⌁</span><span>ПРОВЕРЯЙ<br>КОНТЕКСТ</span></div>
+        <span class="node node-a"><b></b> ОСОЗНАННОСТЬ</span>
+        <span class="node node-b"><b></b> ИСТОЧНИКИ</span>
+        <span class="node node-c"><b></b> ЗАЩИТА</span>
+        <span class="node node-d"><b></b> ЭТИКА</span>
+        <div class="scan-line"></div>
+      </div>
+      <p class="hero-side-note">Прокрутите, чтобы<br>начать обучение <span>↓</span></p>
+    </section>
+
+    <section class="trust-strip" aria-label="Принципы обучения">
+      <div>ЗАКОННОСТЬ <span>✦</span></div><div>ПРИВАТНОСТЬ <span>✦</span></div><div>КРИТИЧЕСКОЕ МЫШЛЕНИЕ <span>✦</span></div><div>ЗАЩИТА ПО УМОЛЧАНИЮ <span>✦</span></div>
+    </section>
+
+    <section class="tracks section-wrap" id="tracks">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">01 · КАРТА НАВЫКОВ</p><h2>Выберите <em>направление.</em></h2></div>
+        <p>Собирайте фундамент последовательно: теория, безопасный кейс, самопроверка и рефлексия.</p>
+      </div>
+      <div class="track-grid">
+        <article class="track-card featured reveal">
+          <div class="card-meta"><span>Трек 01</span><span>06 уроков</span></div>
+          <div class="track-icon icon-osint" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>OSINT и верификация</h3>
+          <p>Находите, оценивайте и фиксируйте сведения из открытых источников, не вторгаясь в чужую приватность.</p>
+          <ul><li>происхождение информации</li><li>оценка надёжности источника</li><li>документирование вывода</li></ul>
+          <button class="card-link open-module" type="button" data-module="osint">Открыть трек <span>→</span></button>
+        </article>
+        <article class="track-card reveal delay-1">
+          <div class="card-meta"><span>Трек 02</span><span>05 уроков</span></div>
+          <div class="track-icon icon-shield" aria-hidden="true">◈</div>
+          <h3>Цифровая гигиена</h3>
+          <p>Соберите спокойную, устойчивую систему защиты учётных записей, устройств и личных данных.</p>
+          <ul><li>менеджер паролей и MFA</li><li>резервное копирование</li><li>модель личных угроз</li></ul>
+          <button class="card-link open-module" type="button" data-module="hygiene">Открыть трек <span>→</span></button>
+        </article>
+        <article class="track-card reveal delay-2">
+          <div class="card-meta"><span>Трек 03</span><span>04 урока</span></div>
+          <div class="track-icon icon-human" aria-hidden="true"><span>◉</span><span>⌁</span></div>
+          <h3>Социальная инженерия</h3>
+          <p>Распознавайте давление и манипуляции; тренируйте безопасный ответ без изучения техник обмана.</p>
+          <ul><li>красные флаги коммуникации</li><li>пауза, проверка, эскалация</li><li>культура без обвинений</li></ul>
+          <button class="card-link open-module" type="button" data-module="human">Открыть трек <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="method section-wrap">
+      <div class="method-label reveal"><p class="eyebrow">02 · НАШ ПОДХОД</p><p class="vertical-copy">ОБУЧЕНИЕ ЧЕРЕЗ<br>БЕЗОПАСНУЮ ПРАКТИКУ</p></div>
+      <div class="method-content">
+        <h2 class="reveal">Не просто знать.<br><em>Уметь остановиться.</em></h2>
+        <div class="method-steps">
+          <article class="step reveal"><span>01</span><div><h3>Сформулируйте вопрос</h3><p>Определяйте цель и пределы исследования до первого действия.</p></div></article>
+          <article class="step reveal delay-1"><span>02</span><div><h3>Проверьте контекст</h3><p>Отделяйте факт от интерпретации и сопоставляйте независимые источники.</p></div></article>
+          <article class="step reveal delay-2"><span>03</span><div><h3>Выберите безопасный шаг</h3><p>Не собирайте лишнее, не обходите доступ и бережно относитесь к данным.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice section-wrap" id="practice">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">03 · ПЕСОЧНИЦА</p><h2>Тренируйтесь<br><em>безопасно.</em></h2></div>
+        <p>Сценарии построены на вымышленных данных. Здесь нет реальных целей, закрытых систем или опасных инструкций.</p>
+      </div>
+      <div class="lab-layout">
+        <article class="scenario-card reveal">
+          <div class="scenario-top"><span class="lab-badge">ЛАБОРАТОРИЯ 01</span><span class="time">~ 7 МИН</span></div>
+          <h3>«Срочное» письмо</h3>
+          <p class="scenario-desc">Сотруднику приходит сообщение с требованием немедленно подтвердить доступ. Найдите признаки риска и выберите безопасную реакцию.</p>
+          <div class="mail-preview">
+            <div class="mail-head"><span class="avatar">!</span><div><b>Служба аккаунта</b><small>кому: вам · 09:41</small></div><span>•••</span></div>
+            <p>Ваш доступ будет приостановлен сегодня. Подтвердите данные в течение 15 минут.</p>
+            <div class="fake-link">verify-access.example</div>
+          </div>
+          <button class="button button-outline start-lab" type="button">Разобрать сценарий <span>→</span></button>
+        </article>
+        <aside class="checklist-panel reveal delay-1">
+          <div class="panel-heading"><span class="panel-icon">✓</span><div><p class="eyebrow">ЧЕК-ЛИСТ</p><h3>Перед действием</h3></div></div>
+          <label class="check-row"><input type="checkbox"><span class="checkmark"></span><span>У меня есть законная цель и полномочия.</span></label>
+          <label class="check-row"><input type="checkbox"><span class="checkmark"></span><span>Я использую только открытые или свои данные.</span></label>
+          <label class="check-row"><input type="checkbox"><span class="checkmark"></span><span>Я не причиню вреда человеку или системе.</span></label>
+          <label class="check-row"><input type="checkbox"><span class="checkmark"></span><span>Я смогу объяснить и воспроизвести вывод.</span></label>
+          <div class="progress-wrap"><div><span>Готовность</span><strong id="checkProgress">0%</strong></div><div class="progress"><i id="progressBar"></i></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="guide section-wrap" id="guide">
+      <div class="guide-copy reveal"><p class="eyebrow"><span class="pulse-dot"></span> ПОТОКОВЫЙ AI-НАВИГАТОР</p><h2>Застряли? <em>Спросите.</em></h2><p>Помощник в реальном времени подскажет урок, объяснит термин простыми словами или предложит безопасный следующий шаг.</p><div class="guide-notice"><span>⌁</span><p><b>Ключи остаются на сервере.</b><br>AI подключается через защищённый серверный шлюз; не вводите пароли, токены и личные данные.</p></div></div>
+      <div class="assistant-console reveal delay-1">
+        <div class="console-titlebar"><div><i></i><i></i><i></i></div><span>НАВИГАТОР / STREAMING AI</span><span class="status">● ЗАПУСК</span></div>
+        <div class="chat" id="chat" aria-live="polite">
+          <div class="message bot"><span class="bot-avatar">K</span><div><p>Привет! Я помогу выбрать безопасный учебный шаг.</p><small>Например: «Как проверить источник?»</small></div></div>
+        </div>
+        <div class="suggestion-row" aria-label="Варианты вопросов">
+          <button type="button" class="prompt-chip">Как проверить источник?</button>
+          <button type="button" class="prompt-chip">Настрой защиту аккаунта</button>
+          <button type="button" class="prompt-chip">Признаки манипуляции</button>
+        </div>
+        <form class="chat-form" id="chatForm">
+          <label class="sr-only" for="chatInput">Ваш вопрос</label>
+          <input id="chatInput" autocomplete="off" placeholder="Напишите безопасный учебный вопрос…" maxlength="220" />
+          <button class="send-button" aria-label="Отправить вопрос" type="submit">↑</button>
+        </form>
+        <p class="console-foot">Навигатор не помогает с вторжением, обходом защит, слежкой или обманом людей.</p>
+      </div>
+    </section>
+
+    <section class="resources section-wrap">
+      <div class="section-heading reveal"><div><p class="eyebrow">04 · ПЕРВЫЙ НЕДЕЛЬНЫЙ СПРИНТ</p><h2>Начните <em>сегодня.</em></h2></div><a class="text-link" href="#guide">Собрать свой план <span>→</span></a></div>
+      <div class="resource-list">
+        <a href="#tracks" class="resource reveal"><span class="resource-no">01</span><div><span class="tag">ОСНОВЫ · 15 МИН</span><h3>Границы: что можно исследовать этично</h3></div><span class="arrow">↗</span></a>
+        <a href="#practice" class="resource reveal delay-1"><span class="resource-no">02</span><div><span class="tag">ПРАКТИКА · 20 МИН</span><h3>Письмо под давлением: остановиться и проверить</h3></div><span class="arrow">↗</span></a>
+        <a href="#guide" class="resource reveal delay-2"><span class="resource-no">03</span><div><span class="tag">ЗАЩИТА · 10 МИН</span><h3>Один аккаунт: пароль, MFA, резервные коды</h3></div><span class="arrow">↗</span></a>
+      </div>
+    </section>
+
+    <section class="manifesto section-wrap reveal">
+      <p>Знание — не разрешение.<br>Навык — не повод <em>навредить.</em></p>
+      <span class="compass-mark" aria-hidden="true">✦</span>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>КОНТУР<span class="brand-dot">.</span></span></a>
+    <p>Обучение цифровой осознанности.<br>Открыто, законно, ответственно.</p>
+    <div><a href="#top">Наверх ↑</a><small>© 2026 Контур</small></div>
+  </footer>
+
+  <dialog class="modal" id="moduleModal" aria-labelledby="modalTitle">
+    <div class="modal-inner"><button class="modal-close" type="button" aria-label="Закрыть">×</button><span class="lab-badge" id="modalLabel">ТРЕК</span><h2 id="modalTitle"></h2><p id="modalText"></p><div class="modal-list" id="modalList"></div><button class="button button-primary modal-close-action" type="button">Понятно, начнём <span>→</span></button></div>
+  </dialog>
+  <dialog class="modal lab-modal" id="labModal" aria-labelledby="labTitle">
+    <div class="modal-inner"><button class="modal-close" type="button" aria-label="Закрыть">×</button><span class="lab-badge">ТРЕНАЖЁР · БЕЗОПАСНЫЙ РАЗБОР</span><h2 id="labTitle">Какая реакция безопаснее?</h2><p>Сообщение создаёт срочность и направляет на незнакомый адрес. Что вы сделаете сначала?</p><div class="answer-list"><button type="button" data-answer="wrong">Перейду по ссылке, чтобы не потерять доступ.</button><button type="button" data-answer="right">Не использую ссылку; открою официальный сайт или свяжусь с поддержкой по известному каналу.</button><button type="button" data-answer="wrong">Отправлю письмо коллегам без проверки.</button></div><div class="answer-feedback" id="answerFeedback" aria-live="polite"></div></div>
+  </dialog>
+  <script src="config.js"></script>
+  <script>
+const modules = {
+  osint: {
+    label: 'ТРЕК 01 · OSINT', title: 'OSINT и верификация',
+    text: 'Этот трек учит работать только с открытыми и законно доступными данными. Цель — обоснованный вывод, а не сбор данных о людях.',
+    lessons: ['Сформулируйте вопрос и границы исследования.', 'Оцените первоисточник, дату и независимые подтверждения.', 'Зафиксируйте, что известно, а что остаётся предположением.']
+  },
+  hygiene: {
+    label: 'ТРЕК 02 · ЗАЩИТА', title: 'Цифровая гигиена',
+    text: 'Практика для повседневной устойчивости: уменьшить риски без сложных инструментов и лишней тревоги.',
+    lessons: ['Настройте уникальные пароли в менеджере паролей.', 'Включите многофакторную аутентификацию и сохраните коды восстановления.', 'Проверьте обновления, резервную копию и права приложений.']
+  },
+  human: {
+    label: 'ТРЕК 03 · ЛЮДИ', title: 'Социальная инженерия',
+    text: 'Здесь вы научитесь распознавать давление, срочность и подмену доверия, а затем корректно проверять запросы.',
+    lessons: ['Замечайте: срочность, секретность, страх или слишком щедрое обещание.', 'Сделайте паузу и используйте известный независимый канал связи.', 'Сообщите о подозрительном запросе без стыда и обвинений.']
+  }
+};
+
+const modal = document.getElementById('moduleModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalText = document.getElementById('modalText');
+const modalLabel = document.getElementById('modalLabel');
+const modalList = document.getElementById('modalList');
+document.querySelectorAll('.open-module').forEach(button => button.addEventListener('click', () => {
+  const item = modules[button.dataset.module];
+  modalLabel.textContent = item.label; modalTitle.textContent = item.title; modalText.textContent = item.text;
+  modalList.innerHTML = item.lessons.map(lesson => `<div>${lesson}</div>`).join('');
+  modal.showModal();
+}));
+document.querySelectorAll('.modal-close, .modal-close-action').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
+document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); }));
+
+const checkboxes = [...document.querySelectorAll('.check-row input')];
+const progress = document.getElementById('checkProgress');
+const progressBar = document.getElementById('progressBar');
+checkboxes.forEach(box => box.addEventListener('change', () => {
+  const value = Math.round((checkboxes.filter(item => item.checked).length / checkboxes.length) * 100);
+  progress.textContent = `${value}%`; progressBar.style.width = `${value}%`;
+}));
+
+const labModal = document.getElementById('labModal');
+document.querySelector('.start-lab').addEventListener('click', () => {
+  const feedback = document.getElementById('answerFeedback'); feedback.textContent = ''; feedback.className = 'answer-feedback'; labModal.showModal();
+});
+document.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
+  const feedback = document.getElementById('answerFeedback');
+  if (button.dataset.answer === 'right') {
+    feedback.textContent = 'Верно. Не переходите по ссылке из сообщения: проверьте запрос через известный официальный канал.'; feedback.className = 'answer-feedback';
+  } else {
+    feedback.textContent = 'Не лучший вариант. Срочность — повод сделать паузу, а не действовать быстрее.'; feedback.className = 'answer-feedback bad';
+  }
+}));
+
+// === AI Navigator ==========================================================
+// The browser never receives an OpenAI key. Requests go only to the configured
+// Cloudflare Worker, which applies instructions and streams responses back.
+const chat = document.getElementById('chat');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const sendButton = chatForm.querySelector('button');
+const status = document.querySelector('.console-titlebar .status');
+const consoleFoot = document.querySelector('.console-foot');
+const config = window.KONTUR_CONFIG || {};
+const endpoint = String(config.aiEndpoint || '');
+const isConfigured = Boolean(config.aiEnabled && /^https:\/\//.test(endpoint) && !endpoint.includes('REPLACE_'));
+let history = [];
+
+function addMessage(text, role, options = {}) {
+  const element = document.createElement('div');
+  element.className = `message ${role}${options.loading ? ' loading' : ''}`;
+  const bubble = document.createElement('div');
+  const paragraph = document.createElement('p');
+  paragraph.textContent = text;
+  bubble.appendChild(paragraph);
+  if (role === 'bot') {
+    const avatar = document.createElement('span'); avatar.className = 'bot-avatar'; avatar.textContent = 'K'; element.append(avatar, bubble);
+  } else element.appendChild(bubble);
+  chat.appendChild(element); chat.scrollTop = chat.scrollHeight;
+  return { element, paragraph };
+}
+
+function setAssistantStatus() {
+  if (isConfigured) {
+    status.textContent = '● LIVE AI'; status.classList.remove('offline');
+    consoleFoot.textContent = 'Потоковый ответ защищён серверным шлюзом. Не вводите пароли, токены или персональные данные.';
+  } else {
+    status.textContent = '● НУЖНА НАСТРОЙКА'; status.classList.add('offline');
+    consoleFoot.textContent = 'Укажите URL Cloudflare Worker в config.js, чтобы включить реальный потоковый AI-помощник.';
+  }
+}
+setAssistantStatus();
+
+async function streamReply(messages, target) {
+  const response = await fetch(endpoint, {
+    method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages })
+  });
+  if (!response.ok || !response.body) {
+    let explanation = 'AI-сервис временно недоступен. Попробуйте ещё раз позже.';
+    try { explanation = (await response.json()).error || explanation; } catch (_) { /* no JSON */ }
+    throw new Error(explanation);
+  }
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = ''; let answer = '';
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    let boundary;
+    while ((boundary = buffer.match(/\r?\n\r?\n/))) {
+      const frame = buffer.slice(0, boundary.index); buffer = buffer.slice(boundary.index + boundary[0].length);
+      const eventLine = frame.split('\n').find(line => line.startsWith('event:')) || '';
+      const data = frame.split('\n').filter(line => line.startsWith('data:')).map(line => line.slice(5).trim()).join('\n');
+      if (!data || data === '[DONE]') continue;
+      try {
+        const payload = JSON.parse(data);
+        if (eventLine.includes('response.output_text.delta') || payload.type === 'response.output_text.delta') {
+          answer += payload.delta || ''; target.paragraph.textContent = answer; chat.scrollTop = chat.scrollHeight;
+        } else if (payload.type === 'error') {
+          throw new Error(payload.error?.message || 'Сервис вернул ошибку.');
+        }
+      } catch (error) {
+        if (error instanceof SyntaxError) console.warn('Skipped unparseable SSE frame'); else throw error;
+      }
+    }
+  }
+  return answer.trim();
+}
+
+async function askAssistant(rawQuestion) {
+  const question = rawQuestion.trim();
+  if (!question) return;
+  addMessage(question, 'user'); chatInput.value = '';
+  if (!isConfigured) {
+    addMessage('Помощник будет доступен сразу после подключения Cloudflare Worker. Откройте README: раздел «Запуск реального AI-помощника».', 'bot');
+    return;
+  }
+  sendButton.disabled = true; chatInput.disabled = true;
+  const pending = addMessage('Думаю и формирую безопасный ответ…', 'bot', { loading: true });
+  const requestHistory = [...history, { role: 'user', content: question }];
+  try {
+    const answer = await streamReply(requestHistory, pending);
+    pending.element.classList.remove('loading');
+    if (!answer) throw new Error('Ответ не получен. Попробуйте сформулировать вопрос иначе.');
+    history = [...requestHistory, { role: 'assistant', content: answer }].slice(-10);
+  } catch (error) {
+    pending.element.classList.remove('loading'); pending.paragraph.textContent = error.message || 'Не удалось получить ответ.';
+  } finally {
+    sendButton.disabled = false; chatInput.disabled = false; chatInput.focus();
+  }
+}
+chatForm.addEventListener('submit', event => { event.preventDefault(); askAssistant(chatInput.value); });
+document.querySelectorAll('.prompt-chip').forEach(chip => chip.addEventListener('click', () => askAssistant(chip.textContent)));
+
+// === Page details ==========================================================
+document.querySelectorAll('[data-scroll]').forEach(button => button.addEventListener('click', () => document.querySelector(button.dataset.scroll).scrollIntoView({ behavior: 'smooth' })));
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', () => menuButton.setAttribute('aria-expanded', String(menuButton.getAttribute('aria-expanded') !== 'true')));
+const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }}), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+  </script>
+</body>
+</html>
